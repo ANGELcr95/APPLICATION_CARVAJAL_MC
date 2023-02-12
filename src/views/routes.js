@@ -1,6 +1,14 @@
-import Login from "./pages/Login.js";
+import Login from "./outlet/Login.js";
+import Register from "./outlet/Register.js";
 
 let routes = [
+    {
+      path: "/register",
+      name: "Registrar",
+      icon: "ni ni-circle-08 text-pink",
+      component: Register,
+      layout: "/auth"
+    },
     {
       path: "/login",
       name: "Salir",

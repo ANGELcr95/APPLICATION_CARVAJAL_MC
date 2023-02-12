@@ -37,7 +37,7 @@ const Admin = () => {
     <>
     <h1>Admin</h1>
       {/* <Sidebar
-        routes={routes}
+      routes={routes}
         logo={{
           innerLink: "/admin/index",
           imgSrc: require("../assets/img/brand/argon-react.png"),

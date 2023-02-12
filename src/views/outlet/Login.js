@@ -35,11 +35,11 @@ const Login = () => {
     email: "",
     password: "",
   });
-  
+
   const [, setValueUser] = useLocalStorage("user", "");
   const [, setValue] = useLocalStorage("token", "");
 
-  const history = useNavigate();
+  const navigate = useNavigate();
   const dispatch = useDispatch();
 
   const validateForm = () => {
@@ -76,16 +76,20 @@ const Login = () => {
   const handleLogin = async () => {
     const validate = validateForm();
     if (validate.type === "success") {
-      const response = await postAxios("/user/login", form);
-      if (response.error) {
+      const { user, token } = await postAxios(
+        "/auth/login",
+        form
+      );
+
+      if (!token) {
         handleErrorLogin();
         return;
       }
-      dispatch(setLogin(response.data.user));
-      dispatch(setToken(response.data.token));
-      setValueUser(response.data.user);
-      setValue(response.data.token);
-      history("/admin");
+      dispatch(setLogin(`${user?.name} ${user?.last_name}`));
+      dispatch(setToken(token));
+      setValueUser(`${user?.name} ${user?.last_name}`);
+      setValue(token);
+      navigate("/admin");
       return;
     }
     Swal.fire({
@@ -100,7 +104,6 @@ const Login = () => {
     <>
       <Col lg="5" md="7">
         <Card className="bg-secondary shadow border-0">
-    
           <CardBody className="px-lg-5 py-lg-5">
             <div className="text-center text-muted mb-4">
               <small>Inicia sesion en el portal</small>
@@ -117,7 +120,7 @@ const Login = () => {
                     onChange={handleInputChange}
                     value={form.email}
                     name="email"
-                    placeholder="Email"
+                    placeholder="Correo"
                     type="email"
                     autoComplete="new-email"
                   />
@@ -134,7 +137,7 @@ const Login = () => {
                     onChange={handleInputChange}
                     value={form.password}
                     name="password"
-                    placeholder="Password"
+                    placeholder="Contraseña"
                     type="password"
                     autoComplete="new-password"
                   />
@@ -146,12 +149,6 @@ const Login = () => {
                   id=" customCheckLogin"
                   type="checkbox"
                 />
-                <label
-                  className="custom-control-label"
-                  htmlFor=" customCheckLogin"
-                >
-                  <span className="text-muted">Recordar</span>
-                </label>
               </div>
               <div className="text-center">
                 <Button
@@ -168,12 +165,9 @@ const Login = () => {
         </Card>
         <Row className="mt-3">
           <Col className="text-right pointer" xs="12">
-            <a
-              className="text-light"
-              onClick={(e) => e.preventDefault()}
-            >
-              <small>Crear nueva cuenta</small>
-            </a>
+              <a className="text-light" onClick={() => navigate('/auth/register')}>
+                <small>Crear nueva cuenta</small>
+              </a>
           </Col>
         </Row>
       </Col>

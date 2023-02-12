@@ -4,8 +4,8 @@ import { useLocation, Outlet} from "react-router-dom";
 
 import { Container, Row, Col } from "reactstrap";
 
-import AuthNavbar from "../components/Navbars/AuthNavbar.js";
-import Footer from "../components/Footers/Footer";
+import AuthNavbar from "../components/navbars/AuthNavbar.js";
+import Footer from "../components/footers/Footer";
 
 const Auth = (props) => {
   const mainContent = useRef(null);
@@ -23,7 +23,7 @@ const Auth = (props) => {
     <>
       <div className="main-content" ref={mainContent}>
         <AuthNavbar />
-        <div className="header bg-gradient-green py-7 py-lg-8">
+        <div className="header bg-gradient-green pt-8 pb-5 py-lg-8">
           <Container>
             <div className="header-body text-center mb-7">
               <Row className="justify-content-center">
@@ -32,6 +32,7 @@ const Auth = (props) => {
                   <h1 className="text-white">Bienvenido!</h1>
                   <p className="text-lead text-white">
                     Por favor ingresa tus credenciales para que puedas acceder a tu cuenta :)
+                    portal de uso testeo de aplicacion a vacante  prefesional desarrolador.
                   </p>
                 </Col>
               </Row>
