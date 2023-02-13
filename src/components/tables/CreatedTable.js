@@ -1,28 +1,18 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
-  Badge,
   Button,
   Card,
   CardHeader,
-  DropdownItem,
-  DropdownMenu,
-  DropdownToggle,
   Input,
-  Media,
   Table,
-  UncontrolledDropdown,
 } from "reactstrap";
 
-// Services
-import deleteAxios from "../../services/deleteAxios ";
-
-// Styles
 import Swal from "sweetalert2";
-import putAxios from "../../services/putAxios";
-import useLocalStorage from "../../hooks/useLocalStorage";
-import postAxios from "../../services/postAxios";
-import { setContact } from "../../redux/contactSlice";
+import putAxios from "services/putAxios";
+import useLocalStorage from "hooks/useLocalStorage";
+import postAxios from "services/postAxios";
+import { setContact } from "redux/contactSlice";
 
 export const CreatedTable = ({setFlag, flag }) => {
   const [form, setForm] = useState({
