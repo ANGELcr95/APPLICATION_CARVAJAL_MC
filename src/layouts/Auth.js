@@ -3,7 +3,7 @@ import { Outlet } from "react-router-dom";
 
 import { Container, Row, Col } from "reactstrap";
 
-import AuthNavbar from "components/navbars/AuthNavbar.js";
+import AuthNavbar from "components/navbars/AuthNavbar";
 import Footer from "components/footers/Footer";
 
 const Auth = () => {
