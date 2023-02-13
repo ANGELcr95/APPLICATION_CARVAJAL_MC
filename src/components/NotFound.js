@@ -1,9 +1,7 @@
-import React from 'react'
+import React from "react";
 
-function NoFound () {
-  return (
-    <div style={{color:'black'}}>NoFound</div>
-  )
+function NoFound() {
+  return <div className="found-page">404 No Found</div>;
 }
 
-export default NoFound
+export default NoFound;

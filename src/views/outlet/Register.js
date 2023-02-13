@@ -1,9 +1,8 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import {
   Button,
   Card,
-  CardHeader,
   CardBody,
   FormGroup,
   Form,
@@ -12,18 +11,15 @@ import {
   InputGroupText,
   InputGroup,
   Row,
-  Col,
-  Label,
+  Col
 } from "reactstrap";
 
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { setLogin } from "../../redux/loginSlice";
 import { setToken } from "../../redux/loginSlice";
 
 import Swal from "sweetalert2";
 
-import getAxios from "../../services/getAxios";
-import putAxios from "../../services/putAxios";
 import postAxios from "../../services/postAxios";
 import useLocalStorage from "../../hooks/useLocalStorage";
 
@@ -47,7 +43,6 @@ const Register = () => {
     color: null,
   });
 
-  
   const [, setValueUser] = useLocalStorage("user", "");
   const [, setValue] = useLocalStorage("token", "");
 
@@ -135,11 +130,16 @@ const Register = () => {
         }
       }
 
-      const { error, errors = [], token, user } = await postAxios("/users", formUtil);
-        console.log(token);
-        
+      const {
+        error,
+        errors = [],
+        token,
+        user,
+      } = await postAxios("/users", formUtil);
+      console.log(token);
+
       if (!token) {
-        let messageErrors = error || errors[0]?.msg
+        let messageErrors = error || errors[0]?.msg;
         handleErrorLogin(messageErrors);
         return;
       }
@@ -148,8 +148,7 @@ const Register = () => {
         text: `Se ha creado usuario ${form.email} correctamente `,
         icon: "success",
         confirmButtonText: "Ok",
-      })
-      .then(() => {
+      }).then(() => {
         dispatch(setLogin(`${user?.name} ${user?.last_name}`));
         dispatch(setToken(token));
         setValueUser(`${user?.name} ${user?.last_name}`);
@@ -319,12 +318,12 @@ const Register = () => {
             </CardBody>
           </Card>
           <Row className="mt-3">
-          <Col className="text-right pointer" xs="12">
-              <a className="text-light" onClick={() => navigate('/auth/login')}>
+            <Col className="text-right pointer" xs="12">
+              <p className="text-light" onClick={() => navigate("/auth/login")}>
                 <small>Volver Inicio</small>
-              </a>
-          </Col>
-        </Row>
+              </p>
+            </Col>
+          </Row>
         </Col>
       </div>
     </>

@@ -9,9 +9,7 @@ const Login = () => {
             <Col xl="6">
               <div className="copyright text-center text-xl-left text-muted">
                 © {new Date().getFullYear()}{" "}
-                <a
-                  className="font-weight-bold ml-1"
-                >
+                <a className="font-weight-bold ml-1">
                   Ing-Developer Miguel Angel Camacho
                 </a>
               </div>
@@ -27,10 +25,7 @@ const Login = () => {
                   </NavLink>
                 </NavItem>
                 <NavItem>
-                  <NavLink
-                    href="https://github.com/ANGELcr95"
-                    target="_blank"
-                  >
+                  <NavLink href="https://github.com/ANGELcr95" target="_blank">
                     GitHub
                   </NavLink>
                 </NavItem>

@@ -1,7 +1,6 @@
 import {
   Button,
   Card,
-  CardHeader,
   CardBody,
   FormGroup,
   Form,
@@ -14,21 +13,15 @@ import {
 } from "reactstrap";
 import { useNavigate } from "react-router-dom";
 
-// Services
 import postAxios from "../../services/postAxios";
 import useLocalStorage from "../../hooks/useLocalStorage";
 
-// redux
 import { useDispatch } from "react-redux";
 import { useState } from "react";
 import { setLogin } from "../../redux/loginSlice";
 import { setToken } from "../../redux/loginSlice";
 
-// Styles
 import Swal from "sweetalert2";
-import getAxios from "../../services/getAxios";
-import { setBusiness } from "../../redux/coreSlice";
-import { setRole } from "../../redux/coreSlice";
 
 const Login = () => {
   const [form, setForm] = useState({
@@ -76,10 +69,7 @@ const Login = () => {
   const handleLogin = async () => {
     const validate = validateForm();
     if (validate.type === "success") {
-      const { user, token } = await postAxios(
-        "/auth/login",
-        form
-      );
+      const { user, token } = await postAxios("/auth/login", form);
 
       if (!token) {
         handleErrorLogin();
@@ -157,7 +147,7 @@ const Login = () => {
                   type="button"
                   onClick={handleLogin}
                 >
-                  Sign in
+                  Entrar
                 </Button>
               </div>
             </Form>
@@ -165,9 +155,12 @@ const Login = () => {
         </Card>
         <Row className="mt-3">
           <Col className="text-right pointer" xs="12">
-              <a className="text-light" onClick={() => navigate('/auth/register')}>
-                <small>Crear nueva cuenta</small>
-              </a>
+            <p
+              className="text-light"
+              onClick={() => navigate("/auth/register")}
+            >
+              <small>Crear nueva cuenta</small>
+            </p>
           </Col>
         </Row>
       </Col>

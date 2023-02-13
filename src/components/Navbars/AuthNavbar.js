@@ -1,16 +1,6 @@
 import { Link } from "react-router-dom";
 
-import {
-  UncontrolledCollapse,
-  NavbarBrand,
-  Navbar,
-  NavItem,
-  NavLink,
-  Nav,
-  Container,
-  Row,
-  Col
-} from "reactstrap";
+import { NavbarBrand, Navbar, Container } from "reactstrap";
 
 const AdminNavbar = () => {
   return (

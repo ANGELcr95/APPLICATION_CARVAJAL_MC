@@ -1,16 +1,12 @@
-
-import React, { useEffect, useRef, useState } from "react";
-import { useLocation, Outlet} from "react-router-dom";
+import React, { useEffect } from "react";
+import { Outlet } from "react-router-dom";
 
 import { Container, Row, Col } from "reactstrap";
 
 import AuthNavbar from "../components/navbars/AuthNavbar.js";
 import Footer from "../components/footers/Footer";
 
-const Auth = (props) => {
-  const mainContent = useRef(null);
-  const location = useLocation();
-
+const Auth = () => {
   useEffect(() => {
     document.body.classList.add("bg-default");
     return () => {
@@ -18,21 +14,20 @@ const Auth = (props) => {
     };
   }, []);
 
-
   return (
     <>
-      <div className="main-content" ref={mainContent}>
+      <div className="main-content">
         <AuthNavbar />
         <div className="header bg-gradient-green pt-8 pb-5 py-lg-8">
           <Container>
             <div className="header-body text-center mb-7">
               <Row className="justify-content-center">
                 <Col lg="5" md="6">
-                  
                   <h1 className="text-white">Bienvenido!</h1>
                   <p className="text-lead text-white">
-                    Por favor ingresa tus credenciales para que puedas acceder a tu cuenta :)
-                    portal de uso testeo de aplicacion a vacante  prefesional desarrolador.
+                    Por favor ingresa tus credenciales para que puedas acceder a
+                    tu cuenta :) es portal de testeo aplicado profesional
+                    desarrolador.
                   </p>
                 </Col>
               </Row>
@@ -54,10 +49,10 @@ const Auth = (props) => {
             </svg>
           </div>
         </div>
-        
+
         <Container className="mt--8 pb-5">
           <Row className="justify-content-center">
-          <Outlet/>
+            <Outlet />
           </Row>
         </Container>
       </div>

@@ -1,103 +1,30 @@
-import useLocalStorage from "hooks/useLocalStorage";
-import { useDispatch, useSelector } from "react-redux";
-import { Link, useNavigate } from "react-router-dom";
-// reactstrap components
-import {
-  DropdownMenu,
-  DropdownItem,
-  UncontrolledDropdown,
-  DropdownToggle,
-  Form,
-  FormGroup,
-  InputGroupAddon,
-  InputGroupText,
-  Input,
-  InputGroup,
-  Navbar,
-  Nav,
-  Container,
-  Media
-} from "reactstrap";
-import { setLogin } from "redux/loginSlice";
+import useLocalStorage from "../../hooks/useLocalStorage";
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { Form, Navbar, Container, Button } from "reactstrap";
+import { setLogin } from "../../redux/loginSlice";
 
-const AdminNavbar = (props) => {
-  const dispatch = useDispatch()
-  const history = useNavigate()
-  const [, setValueUser] = useLocalStorage('user', '')
-  const [localuser] = useLocalStorage('user', '')
-  const { user } = useSelector((state) => state.login)
-  
+const AdminNavbar = () => {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const [, setValueUser] = useLocalStorage("user", "");
+
   return (
     <>
       <Navbar className="navbar-top navbar-dark" expand="md" id="navbar-main">
         <Container fluid>
-          <Link
-            className="h4 mb-0 text-white text-uppercase d-none d-lg-inline-block"
-            to="/"
+          <Form className="navbar-search navbar-search-dark "></Form>
+          <Button
+            onClick={() => {
+              setValueUser();
+              dispatch(setLogin(null));
+              localStorage.removeItem("token");
+              navigate("/auth");
+            }}
           >
-            {props.brandText}
-          </Link>
-          <Form className="navbar-search navbar-search-dark form-inline mr-3 d-none d-md-flex ml-lg-auto">
-            <FormGroup className="mb-0">
-              <InputGroup className="input-group-alternative">
-                <InputGroupAddon addonType="prepend">
-                  <InputGroupText>
-                    <i className="fas fa-search" />
-                  </InputGroupText>
-                </InputGroupAddon>
-                <Input placeholder="Search" type="text" />
-              </InputGroup>
-            </FormGroup>
-          </Form>
-          <Nav className="align-items-center d-none d-md-flex" navbar>
-            <UncontrolledDropdown nav>
-              <DropdownToggle className="pr-0" nav>
-                <Media className="align-items-center">
-                  <span className="avatar avatar-sm rounded-circle">
-                    <img
-                      alt="..."
-                      src={require("../../assets/img/theme/team-4-800x800.jpg")}
-                    />
-                  </span>
-                  <Media className="ml-2 d-none d-lg-block">
-                    <span className="mb-0 text-sm font-weight-bold">
-                    {user ? `${user.name} ${user.lastname}` : `${localuser.name} ${localuser.lastname}` }
-                    </span>
-                  </Media>
-                </Media>
-              </DropdownToggle>
-              <DropdownMenu className="dropdown-menu-arrow" right>
-                <DropdownItem className="noti-title" header tag="div">
-                  <h6 className="text-overflow m-0">Bienvenido!</h6>
-                </DropdownItem>
-                <DropdownItem to="/admin/user-profile" tag={Link}>
-                  <i className="ni ni-single-02" />
-                  <span>Mi perfil</span>
-                </DropdownItem>
-                <DropdownItem to="/admin/user-profile" tag={Link}>
-                  <i className="ni ni-settings-gear-65" />
-                  <span>Configuaricio</span>
-                </DropdownItem>
-                <DropdownItem to="/admin/user-profile" tag={Link}>
-                  <i className="ni ni-calendar-grid-58" />
-                  <span>Actividad</span>
-                </DropdownItem>
-                <DropdownItem to="/admin/user-profile" tag={Link}>
-                  <i className="ni ni-support-16" />
-                  <span>Soporte</span>
-                </DropdownItem>
-                <DropdownItem divider />
-                <DropdownItem onClick={()=>{
-                  dispatch(setLogin(null))
-                  setValueUser()
-                  history('/auth')
-                }}>
-                  <i className="ni ni-user-run" />
-                  <span>Salir</span>
-                </DropdownItem>
-              </DropdownMenu>
-            </UncontrolledDropdown>
-          </Nav>
+            <i className="ni ni-user-run" />
+            <span>Salir</span>
+          </Button>
         </Container>
       </Navbar>
     </>
