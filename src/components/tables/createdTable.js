@@ -102,7 +102,7 @@ export const CreatedTable = ({setFlag, flag }) => {
     </option>
   ));
 
-  const handleErrorLogin = (error) => {
+  const handleErrorLogin = (error = 'Verfique los campos') => {
     Swal.fire({
       title: "Error!",
       text: `${error}`,
@@ -127,17 +127,27 @@ export const CreatedTable = ({setFlag, flag }) => {
       const { error, errors = [], contact } = 
        id ? await putAxios(`/contacts/${id}`, formUtil, token) : 
        await postAxios("/contacts", formUtil, token)
-      
+
       if (!contact) {
-        let messageErrors = error || errors[0]?.message
-        handleErrorLogin(messageErrors);
+        let messageErrors = error || errors[0]?.msg
+        messageErrors ?handleErrorLogin(messageErrors): handleErrorLogin()
         return;
       }
       setFlag(!flag);
       setDisable(true)
+      dispatch(setContact())
+      setForm({
+        name: "",
+        last_name: "",
+        email: "",
+        country: "",
+        type_id: 1,
+        cell_phone: "",
+        address: ""
+      })
       Swal.fire({
         title: "Exitoso!",
-        text: `Se ha ${ id ? 'actuzalizado': 'creado'} su contacto ${form.name} correctamente `,
+        text: `Se ha ${ id ? 'actualizado': 'creado'} su contacto ${form.name} correctamente `,
         icon: "success",
         confirmButtonText: "Ok",
       })
@@ -279,7 +289,9 @@ export const CreatedTable = ({setFlag, flag }) => {
                 <Button
                   className="d-flex align-items-center"
                   color="success"
-                  onClick={() => handleContact()}
+                  onClick={() => {
+                    handleContact()
+                  }}autoComplete
                 >
                   <i class="fas fa-user-circle"></i>
                   <span>Agregar</span>
