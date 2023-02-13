@@ -3,8 +3,8 @@ import { Outlet } from "react-router-dom";
 
 import { Container, Row, Col } from "reactstrap";
 
-import AuthNavbar from "components/navbars/AuthNavbar";
-import Footer from "components/footers/Footer";
+import AuthNavbar from "components/navbars/authNavbar";
+import Footer from "components/footers/footer";
 
 const Auth = () => {
   useEffect(() => {

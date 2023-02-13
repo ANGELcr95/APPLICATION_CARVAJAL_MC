@@ -1,6 +1,6 @@
-import Login from "views/outlet/Login";
-import Register from "views/outlet/Register";
-import Tables from "views/outlet/Tables";
+import Login from "views/outlet/login";
+import Register from "views/outlet/register";
+import Tables from "views/outlet/tables";
 
 let routes = [
   {

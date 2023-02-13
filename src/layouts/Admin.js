@@ -1,7 +1,7 @@
 import React from "react";
 import { Outlet, Navigate } from "react-router-dom";
 
-import AdminNavbar from "components/navbars/AdminNavbar";
+import AdminNavbar from "components/navbars/adminNavbar";
 import { useSelector } from "react-redux";
 import useLocalStorage from "hooks/useLocalStorage";
 

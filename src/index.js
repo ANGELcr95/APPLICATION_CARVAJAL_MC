@@ -13,8 +13,8 @@ import "assets/scss/argon-dashboard-react.scss";
 import "assets/plugins/nucleo/css/nucleo.css";
 
 import { Provider } from "react-redux";
-import AdminLayout from "layouts/Admin";
-import AuthLayout from "layouts/Auth";
+import AdminLayout from "layouts/admin";
+import AuthLayout from "layouts/auth";
 import { store } from "redux/store";
 import NotFound from "components/NotFound";
 import routes from "views/routes";

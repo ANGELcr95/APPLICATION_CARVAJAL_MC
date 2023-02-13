@@ -1,11 +1,11 @@
 import { Card, CardHeader, Table, Container, Row } from "reactstrap";
 
-import UserHeader from "components/headers/UserHeader";
+import UserHeader from "components/headers/userHeader";
 import { useSelector } from "react-redux";
 import getAxios from "services/getAxios";
 import { useEffect, useState } from "react";
-import { ContacTable } from "components/tables/ContactTable";
-import { CreatedTable } from "components/tables/CreatedTable";
+import { ContacTable } from "components/tables/contactTable";
+import { CreatedTable } from "components/tables/createdTable";
 
 import useLocalStorage from "hooks/useLocalStorage";
 
