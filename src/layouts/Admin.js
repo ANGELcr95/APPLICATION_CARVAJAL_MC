@@ -1,9 +1,9 @@
 import React from "react";
 import { Outlet, Navigate } from "react-router-dom";
 
-import AdminNavbar from "../components/navbars/AdminNavbar";
+import AdminNavbar from "components/navbars/AdminNavbar";
 import { useSelector } from "react-redux";
-import useLocalStorage from "../hooks/useLocalStorage.js";
+import useLocalStorage from "hooks/useLocalStorage.js";
 
 const Admin = () => {
   const { token } = useSelector((state) => state.login);

@@ -15,13 +15,13 @@ import {
 } from "reactstrap";
 
 import { useDispatch } from "react-redux";
-import { setLogin } from "../../redux/loginSlice";
-import { setToken } from "../../redux/loginSlice";
+import { setLogin } from "redux/loginSlice";
+import { setToken } from "redux/loginSlice";
 
 import Swal from "sweetalert2";
 
-import postAxios from "../../services/postAxios";
-import useLocalStorage from "../../hooks/useLocalStorage";
+import postAxios from "services/postAxios";
+import useLocalStorage from "hooks/useLocalStorage";
 
 const Register = () => {
   const [form, setForm] = useState({

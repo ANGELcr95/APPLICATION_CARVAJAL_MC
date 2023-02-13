@@ -1,24 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { useSelector } from "react-redux";
-import {
-  Badge,
-  Button,
-  DropdownItem,
-  DropdownMenu,
-  DropdownToggle,
-  Media,
-  UncontrolledDropdown,
-} from "reactstrap";
+import { Button } from "reactstrap";
 
-// Services
-import deleteAxios from "../../services/deleteAxios ";
+import deleteAxios from "services/deleteAxios ";
 
-// Styles
 import Swal from "sweetalert2";
 import { useDispatch } from "react-redux";
-import putAxios from "../../services/putAxios";
-import useLocalStorage from "../../hooks/useLocalStorage";
-import { setContact } from "../../redux/contactSlice";
+import useLocalStorage from "hooks/useLocalStorage";
+import { setContact } from "redux/contactSlice";
 
 export const ContacTable = ({ contact, setFlag, flag }) => {
   let { token } = useSelector((state) => state.login);
@@ -43,10 +32,10 @@ export const ContacTable = ({ contact, setFlag, flag }) => {
     }).then(async (result) => {
       if (result.isConfirmed) {
         const { contact } = await deleteAxios(`/contacts/${id}`, token);
-        
+
         if (contact) {
           setFlag(!flag);
-          dispatch(setContact(null))
+          dispatch(setContact(null));
           Swal.fire(
             "Eliminado!",
             `Usuario ${contact.name} ha sido eliminado.`,
@@ -75,24 +64,16 @@ export const ContacTable = ({ contact, setFlag, flag }) => {
       </td>
       <td className={!contact.address ? "no-found" : ""}>{contact.address}</td>
       <td className="actions-contact">
-        <Button
-          color="primary"
-          onClick={() => dispatch(setContact(contact))}
-        >
+        <Button color="primary" onClick={() => dispatch(setContact(contact))}>
           <i class="fas fa-trash-alt"></i>
           <span>Actualizar</span>
         </Button>
-        
       </td>
-         <td className="actions-contact">
-        <Button
-          color="danger"
-          onClick={() => handleDelete(contact.id)}
-        >
+      <td className="actions-contact">
+        <Button color="danger" onClick={() => handleDelete(contact.id)}>
           <i class="fas fa-trash-alt"></i>
           <span>Eliminar</span>
         </Button>
-        
       </td>
     </tr>
   );

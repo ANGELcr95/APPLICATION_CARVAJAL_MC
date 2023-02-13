@@ -1,8 +1,8 @@
-import useLocalStorage from "../../hooks/useLocalStorage";
+import useLocalStorage from "hooks/useLocalStorage";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { Form, Navbar, Container, Button } from "reactstrap";
-import { setLogin } from "../../redux/loginSlice";
+import { setLogin } from "redux/loginSlice";
 
 const AdminNavbar = () => {
   const dispatch = useDispatch();

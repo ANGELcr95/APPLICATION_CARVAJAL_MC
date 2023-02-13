@@ -13,13 +13,13 @@ import {
 } from "reactstrap";
 import { useNavigate } from "react-router-dom";
 
-import postAxios from "../../services/postAxios";
-import useLocalStorage from "../../hooks/useLocalStorage";
+import postAxios from "services/postAxios";
+import useLocalStorage from "hooks/useLocalStorage";
 
 import { useDispatch } from "react-redux";
 import { useState } from "react";
-import { setLogin } from "../../redux/loginSlice";
-import { setToken } from "../../redux/loginSlice";
+import { setLogin } from "redux/loginSlice";
+import { setToken } from "redux/loginSlice";
 
 import Swal from "sweetalert2";
 

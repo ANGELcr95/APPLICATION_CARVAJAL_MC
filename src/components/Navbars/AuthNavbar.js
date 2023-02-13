@@ -10,7 +10,7 @@ const AdminNavbar = () => {
           <NavbarBrand to="/" tag={Link}>
             <img
               alt="..."
-              src={require("../../assets/img/brand/carvajal-logo.png")}
+              src={require("assets/img/brand/carvajal-logo.png")}
             />
           </NavbarBrand>
         </Container>

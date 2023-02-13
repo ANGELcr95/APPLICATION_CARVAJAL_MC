@@ -9,15 +9,15 @@ import {
 } from "react-router-dom";
 
 import "@fortawesome/fontawesome-free/css/all.min.css";
-import "./assets/scss/argon-dashboard-react.scss";
-import "./assets/plugins/nucleo/css/nucleo.css";
+import "assets/scss/argon-dashboard-react.scss";
+import "assets/plugins/nucleo/css/nucleo.css";
 
 import { Provider } from "react-redux";
-import AdminLayout from "./layouts/Admin";
-import AuthLayout from "./layouts/Auth";
-import { store } from "./redux/store";
-import NotFound from "./components/NotFound";
-import routes from "./views/routes";
+import AdminLayout from "layouts/Admin";
+import AuthLayout from "layouts/Auth";
+import { store } from "redux/store";
+import NotFound from "components/NotFound";
+import routes from "views/routes";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 

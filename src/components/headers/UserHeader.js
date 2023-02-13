@@ -1,4 +1,4 @@
-import useLocalStorage from "../../hooks/useLocalStorage";
+import useLocalStorage from "hooks/useLocalStorage";
 import { useSelector } from "react-redux";
 import { Container, Row, Col } from "reactstrap";
 
