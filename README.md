@@ -1,70 +1,44 @@
-# Getting Started with Create React App
+# APPLICATION_CARVAJAL_MC
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+It is a repository web application for mobile and desktop that its main purpose is to provide an interface in which the user has access to information with data protection through credentials through authentication, where the user can create their user profile, they will be redirected to the portal where It will provide you with a series of tools to manage your contacts.
 
-## Available Scripts
+## Starting 🚀
 
-In the project directory, you can run:
+These instructions will allow you to obtain a working copy of the project on your local machine for development and testing purposes. It is also important to know that the application is in a production environment.
+It is suggested first to configure the backend of the application [https://github.com/ANGELcr95/API_CARVAJAL_MC](url) with information in README.
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+See **Deployment** to learn how to deploy the project.
+In principle you clone the project of [https://github.com/ANGELcr95/APPLICATION_CARVAJAL_MC](url), you go to your code editor and clone it previously having installed GIT as the following command (git clone url).
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+You install node_modules in the terminal (npm install) if no install run this command (npm install --force)
+Complete the environment variables that are as an example .example.env  the api run in port 3001 and the aplication tun in port 3000 
+the path in production is [https://apicarvajalmc-production.up.railway.app/api-doc/](url) also can connect to this path
+You run npm start by default it runs on port 3000 in browser web
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Pre requirements 📋
 
-### `npm run build`
+React
+Redux
+Git
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Deployment 📦
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+You can check the application online at the following address and experience it yourself [https://application-carvajal-mc-sg89-g5s887nau-angelcr95.vercel.app/auth/login](Application)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Built platforms 🛠️
 
-### `npm run eject`
+* Vercel
+* Git Hub
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Technologies 🛠️
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+* JS
+* Sass
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Author ✒️
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+* **Miguel Angel Camacho Ramierez** - *Ing - Developer* - [https://github.com/ANGELcr95](profile)
+If you need help setting keys or others, you can leave my email * **miguel-angelcr@hotmail.com* 
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

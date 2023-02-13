@@ -26,7 +26,7 @@ const Auth = () => {
                   <h1 className="text-white">Bienvenido!</h1>
                   <p className="text-lead text-white">
                     Por favor ingresa tus credenciales para que puedas acceder a
-                    tu cuenta :) es portal de testeo aplicado profesional
+                    tu cuenta :) este portal se realiza bajo requerimentos, prueba tecnica aplicado profesional
                     desarrolador.
                   </p>
                 </Col>
