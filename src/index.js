@@ -17,7 +17,7 @@ import AdminLayout from "layouts/admin";
 import AuthLayout from "layouts/auth";
 import { store } from "redux/store";
 import NotFound from "components/NotFound";
-import routes from "views/routes";
+import routes from "routes";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
