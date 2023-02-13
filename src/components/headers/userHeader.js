@@ -12,7 +12,7 @@ const UserHeader = () => {
 
   return (
     <>
-      <div className="header pb-6 pt-5 pt-lg-8 d-flex align-items-center">
+      <div className="header pb-3 pt-5 pt-xl-4  d-flex align-items-center">
         <span className="mask bg-gradient-default opacity-8" />
         <Container className="d-flex align-items-center">
           <Row>
