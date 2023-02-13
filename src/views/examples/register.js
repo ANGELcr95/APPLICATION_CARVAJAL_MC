@@ -241,7 +241,7 @@ const Register = () => {
                     type="select"
                     name="select"
                     id="exampleSelect"
-                    placeholder={"Pais"}
+                    placeholder={"País"}
                     onChange={(item) => {
                       let country = item.target.value;
                       setForm({
@@ -252,11 +252,11 @@ const Register = () => {
                   >
                     {form.country ? (
                       <option value="" hidden>
-                        Pais
+                        País
                       </option>
                     ) : (
                       <option value="" hidden selected>
-                        Pais
+                        País
                       </option>
                     )}
                     {country.length && countryUtil}
@@ -287,7 +287,7 @@ const Register = () => {
                       value={form.address}
                       name="address"
                       type="text"
-                      placeholder="Direccion"
+                      placeholder="Dirección"
                       autoComplete="new-address"
                     />
                   </InputGroup>

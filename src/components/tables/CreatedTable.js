@@ -204,7 +204,7 @@ export const CreatedTable = ({setFlag, flag }) => {
                     type="select"
                     name="select"
                     id="exampleSelect"
-                    placeholder={"Pais"}
+                    placeholder={"País"}
                     onChange={(item) => {
                       let country = item.target.value;
                       setForm({
@@ -220,7 +220,7 @@ export const CreatedTable = ({setFlag, flag }) => {
                       </option>
                     ) : (
                       <option value="" hidden selected>
-                        Pais
+                        País
                       </option>
                     )}
                     {country.length && countryUtil}
@@ -231,7 +231,7 @@ export const CreatedTable = ({setFlag, flag }) => {
                     type="select"
                     name="select"
                     id="exampleSelect"
-                    placeholder={"Pais"}
+                    placeholder={"País"}
                     onChange={(item) => {
                       let type_id = item.target.value;
                       setForm({
@@ -268,7 +268,7 @@ export const CreatedTable = ({setFlag, flag }) => {
                   value={form.address}
                   onChange={handleInputChange}
                   name="address"
-                  placeholder="Direccion"
+                  placeholder="Dirección"
                   type="text"
                   autoComplete="new-password"
                 />

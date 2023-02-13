@@ -60,7 +60,7 @@ const Tables = () => {
                     <th scope="col">Nombre</th>
                     <th scope="col">Apellidos</th>
                     <th scope="col">Correo</th>
-                    <th scope="col">Pais</th>
+                    <th scope="col">País</th>
                     <th scope="col">Tipo Contacto</th>
                     <th scope="col">Celular</th>
                     <th scope="col">Direccion</th>
